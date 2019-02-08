@@ -11,17 +11,10 @@ app.controller(
         ) {
             // Init customers array.
             $scope.customers = [];
+            $scope.tableView = true;
+            $scope.currentCustomer = {};
 
             // Cols will show.
-            /*
-            "id": "5c5c2d697029edd8ac089e13",
-    "firstName": "Sanchez",
-    "lastName": "Hopkins",
-    "email": "sanchezhopkins@opticon.com",
-    "address": "826, Louisiana Avenue",
-    "city": "Lawrence",
-    "state": "District Of Columbia",
-    "orderTotal": 11606*/
             $scope.cols = [
                 {key: 'id', text: '#'},
                 {key: 'firstName', text: 'First Name'},
@@ -54,17 +47,24 @@ app.controller(
                     }, function(err) {
                         $log.error(err);
                     });
-            }
+            };
             
             // Show selected row.
             $scope.showRow = function(row) {
                 customerFactory.getOne(row.id)
                     .then(function(resp) {
                         $log.log(resp.data);
+                        $scope.currentCustomer = resp.data;
+                        $scope.tableView = false;
                     }, function(err) {
                         $log.error(err);
                     });
-            }
+            };
+
+            $scope.showTable = function() {
+                $log.log('this is show table')
+                $scope.tableView = true;
+            };
 
 
             $scope.refresh();

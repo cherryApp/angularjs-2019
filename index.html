@@ -9,12 +9,18 @@
 </head>
 <body>
     <div data-ng-controller="appCtrl">
-        <app-table 
+        <app-table data-ng-if="tableView"
             data-delete="deleteRow" 
             data-show="showRow" 
             data-data="customers" 
             data-cols="cols">
         </app-table>
+        <app-one-show 
+            data-cols="cols" 
+            data-data="currentCustomer" 
+            data-ng-if="!tableView" 
+            data-showtable="showTable">
+        </app-one-show>
     </div>
 
 
@@ -22,6 +28,7 @@
     <script src="js/app.js"></script>
     <script src="js/customerFactory.js"></script>
     <script src="js/tableDirective.js"></script>
+    <script src="js/appOneShowDirective.js"></script>
     <script src="js/appCtrl.js"></script>
 </body>
 </html>

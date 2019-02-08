@@ -1,0 +1,7 @@
+<form>
+    <div class="form-group" data-ng-repeat="col in cols">
+        <label>{{ col.text }}</label>
+        <input class="form-control" type="text" data-ng-model="currentData[col.key]">
+    </div>
+    <button class="btn btn-primary" data-ng-click="showtable()">Back To The Table</button>
+</form>
