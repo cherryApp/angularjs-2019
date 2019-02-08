@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div data-ng-controller="appCtrl">
+        <app-table 
+            data-delete="deleteRow" 
+            data-show="showRow" 
+            data-data="customers" 
+            data-cols="cols">
+        </app-table>
+    </div>
+
+
+    <script src="js/lib/angularjs-1.7.6.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/customerFactory.js"></script>
+    <script src="js/tableDirective.js"></script>
+    <script src="js/appCtrl.js"></script>
+</body>
+</html>

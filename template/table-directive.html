@@ -1,0 +1,26 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td data-ng-repeat="col in cols">
+                {{ col.text }}
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="row in currentData">
+            <td data-ng-repeat="col in cols">
+                {{ row[col.key] }}
+            </td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-info" data-ng-click="show(row)">
+                        Show
+                    </button>
+                    <button class="btn btn-danger" data-ng-click="delete(row.id)">
+                        Del
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
